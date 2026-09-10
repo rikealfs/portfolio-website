@@ -1,0 +1,162 @@
+/* Reset browser default styles */
+*, *::before, *::after {
+    /* ensures size includes padding and border */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom Properties for consistent styling */
+:root {
+  --color-bg: #ffffff;
+  --color-text: #1a1a1a;
+  --color-primary: #2563eb;
+  --color-muted: #6b7280;
+  --color-border: #e5e7eb;
+
+  /* Base font family, system-ui as default, -apple-system as fallback for older safari systems and Segoe UI and sans-serif as final fallback */
+  --font-base: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.25rem;
+  --font-size-lg: 1.5rem;
+  --font-size-xl: 2rem;
+
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+}
+
+html {
+    /* for smooth animations */
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  font-family: var(--font-base);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+ul {
+    /* removes default bullet points */
+  list-style: none;
+}
+
+a {
+    /* removes default underline and inherits color from parent */
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+    /* ensures images don't overflow their containers */
+  max-width: 100%;
+  /* removes default inline spacing */
+  display: block;
+}
+
+
+header {
+    /* large top/bottom padding, medium left/right padding */
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+header h1 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-sm);
+}
+
+.tagline {
+  color: var(--color-muted);
+  margin-bottom: var(--space-md);
+}
+
+header nav ul {
+    /* turns nav ul into a flex container -> lays children out in a row instead of vertically */
+  display: flex;
+  /* centers row horizontally */
+  justify-content: center;
+  /* adds space between navigation items */
+  gap: var(--space-lg);
+}
+
+header nav a {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+
+main {
+    /* sets maximum width of elements */
+  max-width: 700px;
+  /* centers the element */
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+/* consistent spacing for main content sections */
+main section {
+  margin-bottom: var(--space-xl);
+}
+
+main h2 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-md);
+}
+
+main p {
+  margin-bottom: var(--space-sm);
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--space-sm);
+}
+
+.skills-list li {
+  background-color: var(--color-border);
+  padding: var(--space-sm);
+  /* adds rounded corners */
+  border-radius: 6px;
+  text-align: center;
+  font-weight: var(--font-weight-semibold);
+}
+
+footer {
+  text-align: center;
+  padding: var(--space-lg) var(--space-md);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted);
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  margin-top: var(--space-sm);
+}
+
+.contact-links a {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
